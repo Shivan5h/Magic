@@ -15,10 +15,5 @@
       "src": "/(.*)",
       "dest": "main.py"
     }
-  ],
-  "env": {
-    "PINECONE_API_KEY": "@pinecone_api_key",
-    "GROQ_API_KEY": "@groq_api_key",
-    "APIFY_API_TOKEN": "@apify_api_token"
-  }
+  ]
 }
