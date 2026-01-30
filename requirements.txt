@@ -1,0 +1,31 @@
+# Web Scraping
+beautifulsoup4==4.12.3
+requests==2.31.0
+selenium==4.16.0
+lxml==5.1.0
+apify-client==1.7.1
+
+# Data Processing
+pandas==2.2.0
+numpy==1.26.3
+
+# Embeddings & Vector Store
+sentence-transformers==2.3.1
+pinecone>=5.0.0
+
+# LLM Integration
+groq>=0.11.0
+langchain==0.1.6
+langchain-community==0.0.20
+
+# Environment & Config
+python-dotenv==1.0.1
+
+# Web Interface
+streamlit==1.31.0
+streamlit-chat==0.1.1
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+
+# Utilities
+tqdm==4.66.1

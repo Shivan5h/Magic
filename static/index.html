@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magicbricks RAG Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🏠 Magicbricks Property Assistant</h1>
+                <p class="subtitle">AI-powered property search with RAG technology</p>
+            </div>
+            <div class="status-indicator" id="status">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Apify Trial Notice -->
+        <div class="notice-banner" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 24px;">⚠️</span>
+                <div>
+                    <strong style="display: block; margin-bottom: 4px;">Limited Demo Mode</strong>
+                    <p style="margin: 0; font-size: 14px; opacity: 0.95;">
+                        Currently showing properties from <strong>Bangalore only</strong> due to Apify API free trial limitations. 
+                        To access properties from Mumbai, Delhi, Pune & other cities, please add Apify credits 
+                        (<a href="https://console.apify.com/billing" target="_blank" style="color: #ffd700; text-decoration: underline;">console.apify.com/billing</a>).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message">
+                    <h2>👋 Welcome!</h2>
+                    <p>Ask me anything about properties:</p>
+                    <div class="example-queries">
+                        <button class="example-btn" onclick="sendExample('Show me 3BHK apartments in Bangalore')">
+                            🏢 3BHK in Bangalore
+                        </button>
+                        <button class="example-btn" onclick="sendExample('Find villas in Whitefield')">
+                            🏡 Villas in Whitefield
+                        </button>
+                        <button class="example-btn" onclick="sendExample('Properties in Electronic City')">
+                            🏙️ Electronic City
+                        </button>
+                        <button class="example-btn" onclick="sendExample('2BHK under 80 lakhs in Bangalore')">
+                            💰 Budget friendly
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Container -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="queryInput" 
+                        placeholder="Ask about properties..."
+                        rows="1"
+                        onkeydown="handleKeyPress(event)"
+                    ></textarea>
+                    <button id="sendBtn" onclick="sendQuery()">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3l16 7-16 7V3z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-info">
+                    <span id="charCount">0 / 500</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel" id="statsPanel">
+            <button class="toggle-stats" onclick="toggleStats()">📊 Stats</button>
+            <div class="stats-content" id="statsContent" style="display: none;">
+                <h3>System Information</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Embedding Model:</span>
+                    <span class="stat-value" id="embeddingModel">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">LLM Model:</span>
+                    <span class="stat-value" id="llmModel">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Index:</span>
+                    <span class="stat-value" id="indexName">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
