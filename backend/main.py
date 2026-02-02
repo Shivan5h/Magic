@@ -89,11 +89,19 @@ class QueryResponse(BaseModel):
 
 
 # Routes
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 async def root():
-    """Serve the main HTML page"""
-    html_file = Path(__file__).parent / "static" / "index.html"
-    return html_file.read_text(encoding='utf-8')
+    """API root endpoint"""
+    return {
+        "name": "Magicbricks RAG Chatbot API",
+        "version": "1.0.0",
+        "status": "running",
+        "endpoints": {
+            "health": "/health",
+            "stats": "/stats",
+            "query": "/query (POST)"
+        }
+    }
 
 
 @app.get("/health")
