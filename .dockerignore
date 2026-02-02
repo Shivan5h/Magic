@@ -1,0 +1,34 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+*.egg-info/
+
+# Frontend
+frontend/
+
+# Data
+data/
+
+# Environment
+.env
+
+# Documentation
+README.md
+DEPLOYMENT.md
+*.md
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+vercel.json
+.vercelignore
