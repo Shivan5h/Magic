@@ -12,7 +12,6 @@ from typing import List, Dict, Optional
 from datetime import datetime
 from tqdm import tqdm
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone, ServerlessSpec
 from config import Config
 

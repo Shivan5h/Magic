@@ -4,7 +4,6 @@ Combines RAG pipeline and CLI interface
 """
 
 from typing import List, Dict
-from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 from groq import Groq
 from config import Config
