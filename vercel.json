@@ -1,24 +1,17 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
-    }
-  ],
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
+      "src": "/",
+      "dest": "/frontend/static/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "main.py"
+      "dest": "/frontend/static/$1"
     }
-  ],
-  "env": {
-    "PINECONE_API_KEY": "@pinecone_api_key",
-    "GROQ_API_KEY": "@groq_api_key",
-    "APIFY_API_TOKEN": "@apify_api_token"
-  }
+  ]
 }
+

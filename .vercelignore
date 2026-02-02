@@ -1,3 +1,6 @@
+# Backend folder (Railway deployment)
+backend/
+
 # Python
 venv/
 __pycache__/
